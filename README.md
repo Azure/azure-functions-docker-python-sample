@@ -46,7 +46,7 @@ You can test the sample function at `http://localhost:8080/api/HttpTrigger1?user
 
 # Docs 
 
-TO find more documentation, open `./docs/index.html` in your browser.
+To find more documentation, open `./docs/index.html` in your browser.
 
 
 # Contributing
