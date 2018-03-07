@@ -1,13 +1,20 @@
 
+# Disclaimer
+
+The project is currently in progress. Please **DO NOT USE IN PRODUCTION** as we expect the feature and design patterns to develop and change over time. 
+
+If you have any feedback or requests, you can file an issue or add comments.
+
+
 # Getting Started
 
-1. Clone the repository
+1. **Clone the repository**
 
 ```shell
 $ git clone https://github.com/Azure/azure-functions-docker-python-sample.git
 ```
 
-2. Build the app
+2. **Build the app**
 
 You are ready to build the app. Make sure you are still at the top level of your new directory. Here’s what `ls` should show:
 
@@ -22,7 +29,7 @@ Now run the build command. This creates a Docker image, which we’re going to t
 docker build . -t python-function-app
 ```
 
-3. Run the app
+3. **Run the app**
 
 Run the app, mapping your machine’s port 8080 to the container’s published port 8080 using -p
 
