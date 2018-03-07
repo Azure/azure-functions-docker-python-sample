@@ -1,8 +1,5 @@
-ARG namespace=azurefunctionstest
-FROM ${namespace}/azure-functions-python3.6:dev-jessie
-ENV AzureWebJobsScriptRoot=/home/site/wwwroot
-
-ENV host:logger:consoleLoggingMode=always
+ARG NAMESPACE=azurefunctionstest
+FROM ${NAMESPACE}/azure-functions-python3.6:dev-jessie
 
 COPY . /home/site/wwwroot
 
@@ -10,6 +7,3 @@ RUN cd /home/site/wwwroot && \
     /bin/bash -c \
     "source /workers/worker_env/bin/activate &&\
     pip3 install -r requirements.txt"
-
-CMD ["bash","/home/site/wwwroot/start.sh"]
-
