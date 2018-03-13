@@ -34,7 +34,7 @@ docker build . -t python-function-app
 Run the app, mapping your machine’s port 8080 to the container’s published port 8080 using -p
 
 ```shell
-docker run -p 8080:8080 -it python-function-app
+docker run -p 8080:80 -it python-function-app
 ```
 
 Go to the URL `http://localhost:8080` in a web browser to see the function app running. 
