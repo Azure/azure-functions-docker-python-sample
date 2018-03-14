@@ -20,7 +20,7 @@ You are ready to build the app. Make sure you are still at the top level of your
 
 ```shell
 $ ls
-Dockerfile  HttpTrigger1    LICENSE    README.md    host.js requirements.txt    start.sh
+Dockerfile  HttpTrigger1  host.js requirements.txt
 ```
 
 Now run the build command. This creates a Docker image, which we’re going to tag using -t so it has a friendly name.
