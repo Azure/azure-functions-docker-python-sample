@@ -3,35 +3,30 @@
 
 The project is currently in progress. Please **DO NOT USE IN PRODUCTION** as we expect the feature and design patterns to develop and change over time. 
 
-If you have any feedback or requests, you can file an issue or add comments.
+If you have any feedback or requests, please file an issue or add comments.
 
 
 # Getting Started
 
-1. **Clone the repository**
+1. **Download and customize the sample**
 
-```shell
-$ git clone https://github.com/Azure/azure-functions-docker-python-sample.git
+Clone the sample app repository to your local machine, then change to the directory that contains the sample code.
+```bash
+git clone https://github.com/Azure/azure-functions-docker-python-sample.git
+cd azure-functions-docker-sample
 ```
 
-2. **Build the app**
+2. **Build the image from the Docker file**
+The `Dockerfile` describes the environment that is required to run the function app on Linux.
 
-You are ready to build the app. Make sure you are still at the top level of your new directory. Here’s what `ls` should show:
-
-```shell
-$ ls
-Dockerfile  HttpTrigger1  host.js requirements.txt
-```
-
-Now run the build command. This creates a Docker image, which we’re going to tag using -t so it has a friendly name.
-
-```shell
-docker build . -t python-function-app
+To build the Docker image, run the `docker build` command, and provide a name `mydockerimage`, and a tag `v1.0.0`. Replace `<docker-id>` with your Docker Hub account ID.
+```bash
+docker build . --tag <docker-id>/mydockerimage:v1.0.0
 ```
 
 3. **Run the app**
 
-Run the app, mapping your machine’s port 8080 to the container’s published port 8080 using -p
+Run the app, mapping your machine’s port 8080 to the container’s published port 80 using the -p flag.
 
 ```shell
 docker run -p 8080:80 -it python-function-app
@@ -39,14 +34,31 @@ docker run -p 8080:80 -it python-function-app
 
 Go to the URL `http://localhost:8080` in a web browser to see the function app running. 
 
-You can test the sample function at `http://localhost:8080/api/HttpTrigger1?user=Azure`
 
-![httptrigger1 sample](img.png)
+4. **Publish to Docker Hub**
+Before you can push an image, you must sign in to Docker Hub using the `docker login` command. Replace `<docker-id>` with your account name and type in your password into the console at the prompt.
+```bash
+docker login --username <docker-id>
+```
+After you've signed in, push the image to Docker Hub by using the `docker push` command.
+```bash
+docker push <docker-id>/mydockerimage:v1.0.0
+```
+Now, you can use this image as the deployment source for a new function app in Azure.
 
+5. **Deploy to Azure**
+A function app hosts the execution of your functions. Create a function app from the Docker Hub image by using the `az functionapp create` command. 
+
+Follow the instructione here:
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image#create-and-deploy-the-custom-image
+ 
 
 # Docs 
 
-To find more documentation, open `./docs/index.html` in your browser.
+To find more documentation
+
+- Open `./docs/index.html` in your browser
+- Navigate to [azure-functions-python-worker](https://github.com/Azure/azure-functions-python-worker)
 
 
 # Contributing
