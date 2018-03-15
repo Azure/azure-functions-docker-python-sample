@@ -29,7 +29,7 @@ docker build . --tag <docker-id>/mydockerimage:v1.0.0
 Run the app, mapping your machine’s port 8080 to the container’s published port 80 using the -p flag.
 
 ```shell
-docker run -p 8080:80 -it python-function-app
+docker run -p 8080:80 -it <docker-id>/mydockerimage:v1.0.0
 ```
 
 Go to the URL `http://localhost:8080` in a web browser to see the function app running. 
