@@ -8,7 +8,7 @@ If you have any feedback or requests, please file an issue or add comments.
 
 # Getting Started
 
-1. **Download and customize the sample**
+## 1. Download and customize the sample
 
 Clone the sample app repository to your local machine, then change to the directory that contains the sample code.
 ```bash
@@ -16,7 +16,7 @@ git clone https://github.com/Azure/azure-functions-docker-python-sample.git
 cd azure-functions-docker-sample
 ```
 
-2. **Build the image from the Docker file**
+## 2. Build the image from the Docker file
 The `Dockerfile` describes the environment that is required to run the function app on Linux.
 
 To build the Docker image, run the `docker build` command, and provide a name `mydockerimage`, and a tag `v1.0.0`. Replace `<docker-id>` with your Docker Hub account ID.
@@ -24,7 +24,7 @@ To build the Docker image, run the `docker build` command, and provide a name `m
 docker build . --tag <docker-id>/mydockerimage:v1.0.0
 ```
 
-3. **Run the app**
+## 3. Run the app
 
 Run the app, mapping your machine’s port 8080 to the container’s published port 80 using the -p flag.
 
@@ -35,7 +35,7 @@ docker run -p 8080:80 -it python-function-app
 Go to the URL `http://localhost:8080` in a web browser to see the function app running. 
 
 
-4. **Publish to Docker Hub**
+## 4. Publish to Docker Hub
 Before you can push an image, you must sign in to Docker Hub using the `docker login` command. Replace `<docker-id>` with your account name and type in your password into the console at the prompt.
 ```bash
 docker login --username <docker-id>
@@ -46,7 +46,7 @@ docker push <docker-id>/mydockerimage:v1.0.0
 ```
 Now, you can use this image as the deployment source for a new function app in Azure.
 
-5. **Deploy to Azure**
+## 5. Deploy to Azure
 A function app hosts the execution of your functions. Create a function app from the Docker Hub image by using the `az functionapp create` command. 
 
 Follow the instructione here:
