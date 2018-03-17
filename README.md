@@ -44,14 +44,15 @@ RUN cd /home/site/wwwroot && \
 
 ## Build and deploy the custom image
 
-To build and test your image locally, and deploy to Azure, follow the instructions here - 
+To build and test your image locally, and deploy to Azure, follow the instructions here -
+
 [Create a function on Linux using a custom image](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image#run-the-build-command).
 
  
 # Learn More 
 
-### Creating a Python Function : [Developer guide](https://pythondeveloperguide.azurewebsites.net/)
-### Understanding how things work : [Python language worker](https://github.com/Azure/azure-functions-python-worker/wiki/Worker-Architecture)
+#### Creating a Python Function : [Developer guide](https://pythondeveloperguide.azurewebsites.net/)
+#### Understanding how things work : [Python language worker](https://github.com/Azure/azure-functions-python-worker/wiki/Worker-Architecture)
 
 # Contributing
 
