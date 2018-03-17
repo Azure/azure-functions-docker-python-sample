@@ -46,7 +46,7 @@ RUN cd /home/site/wwwroot && \
 
 To build and test your image locally, and deploy to Azure, follow the instructions here -
 
-[Create a function on Linux using a custom image](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image#run-the-build-command).
+[Create a function on Linux using a custom image](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image#run-the-build-command)
 
  
 # Learn More 
