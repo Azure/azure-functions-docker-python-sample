@@ -3,63 +3,54 @@
 
 The project is currently in progress. Please **DO NOT USE IN PRODUCTION** as we expect the feature and design patterns to develop and change over time. 
 
-If you have any feedback or requests, please file an issue or add comments.
+To share your feedback, please file an issue or add comments to existing work items.
 
 
 # Getting Started
 
-## 1. Download and customize the sample
+## Prerequisites
 
-Clone the sample app repository to your local machine, then change to the directory that contains the sample code.
+* [Git](https://git-scm.com/downloads)
+* An active [Azure subscription](https://azure.microsoft.com/pricing/free-trial/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
+* [Docker](https://docs.docker.com/get-started/#setup)
+* A [Docker Hub account](https://docs.docker.com/docker-id/)
+
+## Download the sample
+
+In a terminal window, run the following command to clone the sample app repository to your local machine, then change to the directory that contains the sample code.
+
 ```bash
 git clone https://github.com/Azure/azure-functions-docker-python-sample.git
-cd azure-functions-docker-sample
+cd azure-functions-docker-python-sample
 ```
 
-## 2. Build the image from the Docker file
-The `Dockerfile` describes the environment that is required to run the function app on Linux.
+## Understanding the environment
 
-To build the Docker image, run the `docker build` command, and provide a name `mydockerimage`, and a tag `v1.0.0`. Replace `<docker-id>` with your Docker Hub account ID.
-```bash
-docker build . --tag <docker-id>/mydockerimage:v1.0.0
+In the Git repository, take a look at the `Dockerfile`. This file describes the environment that is required to run Python functions on Linux. 
+
+```docker
+# Base the image on the built-in Azure Functions Python image
+FROM $microsoft/azure-functions-python3.6:dev-jessie
+
+# Add files from this repo to the root site folder.
+COPY . /home/site/wwwroot
+
+# Activate the virtual environment.
+RUN cd /home/site/wwwroot && \
+    /bin/bash -c \
+    "source /workers/worker_env/bin/activate &&\
+    pip3 install -r requirements.txt"
 ```
 
-## 3. Run the app
+## Build and deploy the custom image
 
-Run the app, mapping your machine’s port 8080 to the container’s published port 80 using the -p flag.
+To build and test your image locally, and deploy to Azure, follow the instructions here - [Create a function on Linux using a custom image](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image#run-the-build-command).
 
-```shell
-docker run -p 8080:80 -it <docker-id>/mydockerimage:v1.0.0
-```
-
-Go to the URL `http://localhost:8080` in a web browser to see the function app running. 
-
-
-## 4. Publish to Docker Hub
-Before you can push an image, you must sign in to Docker Hub using the `docker login` command. Replace `<docker-id>` with your account name and type in your password into the console at the prompt.
-```bash
-docker login --username <docker-id>
-```
-After you've signed in, push the image to Docker Hub by using the `docker push` command.
-```bash
-docker push <docker-id>/mydockerimage:v1.0.0
-```
-Now, you can use this image as the deployment source for a new function app in Azure.
-
-## 5. Deploy to Azure
-A function app hosts the execution of your functions. Create a function app from the Docker Hub image by using the `az functionapp create` command. 
-
-Follow the instructione here:
-https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image#create-and-deploy-the-custom-image
  
+# Learn More 
 
-# Docs 
-
-To find more documentation
-
-- Open `./docs/index.html` in your browser
-- Navigate to [azure-functions-python-worker](https://github.com/Azure/azure-functions-python-worker)
-
+- [Python Functions - Getting Started](https://github.com/Azure/azure-functions-python-worker/blob/dev/README.md)
+- [Python Functions - Developer guide](https://pythondeveloperguide.azurewebsites.net/)
 
 # Contributing
 
