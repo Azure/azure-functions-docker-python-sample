@@ -28,7 +28,7 @@ cd azure-functions-docker-python-sample
 
 In the Git repository, take a look at the `Dockerfile`. This file describes the environment that is required to run Python functions on Linux. 
 
-```docker
+```dockerfile
 # Base the image on the built-in Azure Functions Python image
 FROM $microsoft/azure-functions-python3.6:dev-jessie
 
@@ -44,13 +44,14 @@ RUN cd /home/site/wwwroot && \
 
 ## Build and deploy the custom image
 
-To build and test your image locally, and deploy to Azure, follow the instructions here - [Create a function on Linux using a custom image](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image#run-the-build-command).
+To build and test your image locally, and deploy to Azure, follow the instructions here - 
+[Create a function on Linux using a custom image](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image#run-the-build-command).
 
  
 # Learn More 
 
-- [Python Functions - Getting Started](https://github.com/Azure/azure-functions-python-worker/blob/dev/README.md)
-- [Python Functions - Developer guide](https://pythondeveloperguide.azurewebsites.net/)
+### Creating a Python Function : [Developer guide](https://pythondeveloperguide.azurewebsites.net/)
+### Understanding how things work : [Python language worker](https://github.com/Azure/azure-functions-python-worker/wiki/Worker-Architecture)
 
 # Contributing
 
