@@ -1,7 +1,7 @@
 
 # Disclaimer
 
-The project is currently in progress. Please **DO NOT USE IN PRODUCTION** as we expect the feature and design patterns to develop and change over time. 
+The project is currently in progress. Please **do not use in production** as we expect the feature and design patterns to develop and change over time. 
 
 To share your feedback, please file an issue or add comments to existing work items.
 
