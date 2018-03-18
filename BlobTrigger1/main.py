@@ -1,7 +1,6 @@
 import logging
 
-import azure.functions as azf
-
+import azure.functions as func
 
 def main(myblob: azf.InputStream):
     logging.info(f"Python blob trigger function processed blob \n"
