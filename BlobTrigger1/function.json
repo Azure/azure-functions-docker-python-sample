@@ -1,0 +1,13 @@
+{
+    "scriptFile": "main.py",
+    "disabled": false,
+    "bindings": [
+        {
+            "name": "myblob",
+            "type": "blobTrigger",
+            "direction": "in",
+            "path": "samples-workitems/{name}",
+            "connection":"AzureWebJobsStorage"
+        }
+    ]
+}
