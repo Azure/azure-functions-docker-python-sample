@@ -1,5 +1,7 @@
 FROM microsoft/azure-functions-python3.6:dev-jessie
 
+ENV host:logger:consoleLoggingMode=always
+
 COPY . /home/site/wwwroot
 
 RUN cd /home/site/wwwroot && \
