@@ -42,6 +42,22 @@ RUN cd /home/site/wwwroot && \
     pip3 install -r requirements.txt"
 ```
 
+## Configure your environment
+
+Azure functions needs a storage account environment in order to run locally.
+
+The best way to do this is to create a Storage Account in Azure and remember the key to pass along to the environment va
+riable for the container.
+
+Then when we use the docker run command in the below instructions we would want to add a -e in order to set the environm
+ent variable for the AzureWebJobsStorage configuration (similar to below).
+
+``` bash
+cd azure-functions-docker-python-sample
+docker build --tag testpython:v1 .
+docker run -p 8080:80 -it -e AzureWebJobsStorage="DefaultEndpointsProtocol=https;AccountName=pythontest;AccountKey=...;EndpointSuffix=core.windows.net" testpython:v1
+```
+
 ## Build and deploy the custom image
 
 To build and test your image locally, and deploy to Azure, follow the instructions here -
