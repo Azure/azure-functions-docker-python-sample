@@ -46,11 +46,8 @@ RUN cd /home/site/wwwroot && \
 
 Azure functions needs a storage account environment in order to run locally.
 
-The best way to do this is to create a Storage Account in Azure and remember the key to pass along to the environment va
-riable for the container.
+The best way to add this is to create a Storage Account in Azure and pass the connection string as an environment variable called `AzureWebJobsStorage` to the docker run command. 
 
-Then when we use the docker run command in the below instructions we would want to add a -e in order to set the environm
-ent variable for the AzureWebJobsStorage configuration (similar to below).
 
 ``` bash
 cd azure-functions-docker-python-sample
