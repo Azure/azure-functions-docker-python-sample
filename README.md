@@ -44,7 +44,7 @@ RUN cd /home/site/wwwroot && \
 
 ## Configure your environment
 
-Azure Functions needs a storage account environment in order to run locally.
+Azure Functions needs a storage account in order to run locally.
 
 The best way to add this is to create a Storage Account in Azure and pass the connection string as an environment variable called `AzureWebJobsStorage` to the docker run command. 
 
