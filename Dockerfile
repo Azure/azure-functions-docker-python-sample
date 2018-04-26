@@ -1,4 +1,4 @@
-FROM microsoft/azure-functions-python3.6:dev-jessie
+FROM microsoft/azure-functions-python3.6:v2.0.11651-alpha
 
 ENV host:logger:consoleLoggingMode=always
 
