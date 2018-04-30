@@ -4,7 +4,4 @@ ENV host:logger:consoleLoggingMode=always
 
 COPY . /home/site/wwwroot
 
-RUN cd /home/site/wwwroot && \
-    /bin/bash -c \
-    "source /workers/worker_env/bin/activate &&\
-    pip3 install -r requirements.txt"
+RUN cd /home/site/wwwroot && pip install -r requirements.txt
