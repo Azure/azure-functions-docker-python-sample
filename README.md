@@ -1,6 +1,6 @@
-This repository will host the instructions and neccessary artifacts for building and publishing Python Functions as a Docker container on Linux.
+This repository hosts the instructions and neccessary artifacts for building and publishing Python Functions as a Docker container on Linux.
 
-For comprehensive information about Python in Azure Functions, refer to the [azure-functions-python-worker repo](https://github.com/Azure/azure-functions-python-worker).
+For comprehensive information about Python in Azure Functions, refer to the [azure-functions-python-worker](https://github.com/Azure/azure-functions-python-worker) repo.
 
 # Getting Started
 
