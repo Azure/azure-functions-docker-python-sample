@@ -35,6 +35,12 @@ COPY . /home/site/wwwroot
 RUN cd /home/site/wwwroot && pip install -r requirements.txt
 ```
 
+## Build and deploy the custom image
+
+To build and test your image locally, and deploy to Azure, follow the instructions here -
+
+[Create a function on Linux using a custom image](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image#run-the-build-command)
+
 ## Configure storage
 
 Azure Functions needs a storage account in order to run locally.
@@ -45,12 +51,6 @@ The best way to add this is to create a Storage Account in Azure and pass the co
 ``` bash
 docker run -p 8080:80 -it -e AzureWebJobsStorage="{connection-string}" <docker-id>/mydockerimage:v1.0.0
 ```
-
-## Build and deploy the custom image
-
-To build and test your image locally, and deploy to Azure, follow the instructions here -
-
-[Create a function on Linux using a custom image](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image#run-the-build-command)
 
 
 # Contributing
