@@ -1,4 +1,4 @@
-This repository hosts the instructions and neccessary artifacts for building and publishing Python Functions as a Docker container on Linux.
+This repository hosts the instructions and necessary artifacts for building and publishing Python Functions as a Docker container on Linux.
 
 For comprehensive information about Python in Azure Functions, refer to the [azure-functions-python-worker](https://github.com/Azure/azure-functions-python-worker) repo.
 
@@ -26,13 +26,15 @@ In the Git repository, take a look at the `Dockerfile`. This file describes the 
 
 ```dockerfile
 # Base the image on the built-in Azure Functions Python image
-FROM microsoft/azure-functions-python3.6:v2.0.11737-alpha
+FROM mcr.microsoft.com/azure-functions/python:2.0
+
+WORKDIR AzureWebJobsScriptRoot
 
 # Add files from this repo to the root site folder.
-COPY . /home/site/wwwroot
+COPY . .
 
 # Install requirements
-RUN cd /home/site/wwwroot && pip install -r requirements.txt
+RUN pip install -r requirements.txt
 ```
 
 ## Build and deploy the custom image

@@ -1,0 +1,71 @@
+# OS files
+**/*.DS_Store
+.directory
+Thumbs.db
+[Dd]esktop.ini
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+build/
+dist/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PyBuilder
+target/
+
+# pyenv
+.python-version
+
+# dotenv
+.env
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+# Azure functions local settings
+**/local.settings.json
+.vscode
+**/[Ss]ecrets
+
+serverless/bin
+serverless/obj
+csx
+.vs
+edge
+Publish
+
+*.user
+*.suo
+*.cscfg
+*.Cache
+project.lock.json
+
+/packages
+/TestResults
+
+/tools/NuGet.exe
+/App_Data
+/[Ss]ecrets
+/data
+.[Ss]ecrets
+appsettings.json
+local.settings.json
+
+node_modules
+
+.git

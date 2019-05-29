@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  azure-python:
+    build:
+      context: .
+      args:
+        BASE_IMAGE: 'mcr.microsoft.com/azure-functions/python'
+        BASE_IMAGE_TAG: '2.0.12491'
+    image: azure-python-sample
+    container_name: azure-python-sample
+    restart: always
+    environment:
+      - 'ASPNETCORE_ENVIRONMENT=development'
+      - 'AZURE_FUNCTIONS_ENVIRONMENT=development'
+      - 'FUNCTIONS_WORKER_RUNTIME=python'
+      # - 'languageWorkers__python__arguments=-m ptvsd --host 0.0.0.0 --port 5678'
+      # - 'languageWorkers__python__defaultWorkerPath=${PYTHON_PREFIX}/src/azure-functions-worker/python'
+      - 'host__logging__logLevel__default=Trace'
+      - 'AzureWebJobsSecretStorageType=Files'
+    ports:
+      - 8080:80
+      # - 5678:5678

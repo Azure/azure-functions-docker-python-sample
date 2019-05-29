@@ -1,3 +1,9 @@
+# OS files
+.DS_Store
+.directory
+Thumbs.db
+[Dd]esktop.ini
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -99,3 +105,31 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Azure functions
+serverless/bin/
+serverless/obj/
+serverless/src/
+csx
+.vs
+edge
+Publish
+
+*.user
+*.suo
+*.cscfg
+*.Cache
+project.lock.json
+
+/packages
+/TestResults
+
+/tools/NuGet.exe
+/App_Data
+/[Ss]ecrets
+/data
+.[Ss]ecrets
+appsettings.json
+local.settings.json
+
+node_modules
