@@ -1,4 +1,4 @@
-FROM microsoft/azure-functions-python3.6:v2.0.11737-alpha
+FROM microsoft/azure-functions-python3.6:v2.0.11776-alpha
 
 ENV host:logger:consoleLoggingMode=always
 
